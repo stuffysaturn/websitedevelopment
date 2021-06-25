@@ -1,0 +1,161 @@
+<html>
+    <title>
+        Tanays Guide
+    </title>
+    <body style="background-color:cadetblue;">
+        <div style="background-color: chartreuse;border-radius: 20px;">
+        <p style="font-size: 50px;text-align: center;color: black;font-family:cursive;">Travel Guide</p>
+        </div>
+        <hr style="color:black;font-size: 100px;" >
+   
+   <div style="border-radius: 20px;">
+    <br>   
+    <form>
+        <label for="activityName" style="color: black; font-size: 35px;"> Type what you need to pack here:</label>
+        <input id="activityName" type="text"  value="" style="background-color: gray;padding-top: 10px;font-size: 20px;"><br>
+        <input type="Button" value="Submit" style="background-color: gray;font-size: 25px; position: relative; top: 5px;" onclick="javascript:A1()"> 
+    </form>
+
+    
+    <p style="font-size: 25px;" id="output"></p>
+<br>
+</div>
+<hr>
+<form>
+    <label for="budget" style="color: black; font-size: 30px;"> Budget for trip:</label>
+    <input id="budget" type="number"  value="" style="background-color: gray;padding-top: 10px;font-size: 20px;"><br>
+    <input type="Button" value="Submit" style="background-color: gray;font-size: 25px; position: relative; top: 5px;" onclick="javascript:B1()" > 
+
+</form>
+<p style="font-size: 25px;" id="Set"></p>
+
+<form>
+
+    <label for="itemspent" style="color: black; font-size: 30px;"> Item you bought:</label>
+    <input id="itemspent" type="text"  value="" style="background-color: gray;padding-top: 10px;font-size: 20px;"><br><br>
+
+    <label for="spent" style="color: black; font-size: 30px;"> Cost of the item:</label>
+    <input id="spent" type="number"  value="" style="background-color: gray;padding-top: 10px;font-size: 20px;"><br>
+    <input type="Button" value="Submit" style="background-color: gray;font-size: 25px; position: relative; top: 5px;" onclick="javascript:C1()"> 
+
+
+</form>
+
+<p style="font-size: 25px;" id="spending"></p>
+<p style="color: black; font-size: 30px;" id="whatIsLeft"></p>
+
+
+<p style="font-size: 25px;" id="chosenone"></p>
+<hr>
+
+<form>
+
+<label style="color:black;font-size: 30px;">If your feeling bored here are some games you can play:</label><br>
+<input type="button" value="Generate Game:" style="background-color: gray;font-size: 25px; position: relative; top: 5px;" onclick="javascript:D1()">
+
+</form>
+
+<p style="font-size: 30px;" id="game"></p>
+
+</html>
+<script lang="javascript">
+
+var s1 = document.getElementById("activityName");
+var f1 = document.getElementById("budget");
+var t1 = document.getElementById("itemspent");
+var v1 = document.getElementById("spent");
+var x = (f1.value);
+var counter = 0;
+var randint = 0;
+
+    function A1()
+    {
+        document.getElementById("output").innerHTML += "<li>" + s1.value + " " + "<input type='checkbox'> " + " </li>" ;
+    }
+    function B1()
+    {
+        
+        document.getElementById("Set").innerHTML = "Total Budget: $" + f1.value + "<br>";
+        
+    }
+   
+    function C1()
+    {
+        if (counter == 0)
+        {
+            x = x + f1.value;
+            counter = counter +1;
+        }
+        document.getElementById("spending").innerHTML += "<li>" + "Purchased " + t1.value + " for $" + v1.value + "</li>";
+        document.getElementById("whatIsLeft").innerHTML = "You have $" + (x - v1.value) + " left!" ;
+        x = x - v1.value;
+      if(x < 0 )
+      {
+          alert("Your budget is less than $0! This is not good!")
+      }
+       
+    }
+    function D1()
+    {
+        randint = Math.floor((Math.random() * 10) + 1);
+        if(randint == 1)
+    {
+        document.getElementById("game").innerHTML = "20 Questions"
+    }
+    
+
+    if(randint == 2)
+    {
+        document.getElementById("game").innerHTML = "I Spy"
+    }
+    
+
+    if(randint == 3)
+    {
+        document.getElementById("game").innerHTML = "Name Place Animal Thing"
+    }
+    
+
+    if(randint == 4)
+    {
+        document.getElementById("game").innerHTML = "Would you rather"
+    }
+    
+
+    if(randint == 5)
+    {
+        document.getElementById("game").innerHTML = "Any Card Game"
+    }
+    
+    if(randint == 6)
+    {
+        document.getElementById("game").innerHTML = "License Plate Game"
+    }
+    
+
+    if(randint == 7)
+    {
+        document.getElementById("game").innerHTML = "Alphabet Game"
+    }
+    
+
+    if(randint == 8)
+    {
+        document.getElementById("game").innerHTML = "Name That Song"
+    }
+    
+
+    if(randint == 9)
+    {
+        document.getElementById("game").innerHTML = "Memory Games"
+    }
+    
+
+    if(randint == 10)
+    {
+        document.getElementById("game").innerHTML = "Telephone"
+    }
+    
+
+    } 
+</script>
