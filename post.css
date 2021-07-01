@@ -1,0 +1,63 @@
+body{
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #E73C7E, #23A6D5, #23d5AB);
+    background-size: 400% 400%;
+    position: relative;
+    animation: change 10s ease-in-out infinite;
+    margin:0;
+}
+
+@keyframes change{
+
+0% {
+    background-position: 0 50%;
+}
+50% {
+    background-position: 100% 50%;
+}
+100% {
+    background-position: 0 50%;
+}
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-right:20px;
+    margin-left:20px;
+}
+.boxed{
+    background:#0000008c;
+    padding:2em;
+    border-radius: 20px;
+    border:5px outset #fff;
+}
+input.searching {
+    border: none;
+    outline: none;
+    padding: 0.8em;
+    font-size: 250%;
+    margin: 0.8em;
+    border-radius: 60px;
+    cursor: auto;
+    transition: 0.2s ease-in-out;
+}
+button.press {
+    width: 110PX;
+    height: 110PX;
+    border-radius: 50%;
+    border:none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+button.press:hover{
+    background-color:#ebebebd0;
+}
+input.searching:hover{
+    background-color:#ebebebd0;
+}
+
